@@ -6,7 +6,7 @@ spec:
   params:
     - name: git-url
       description: The git repository URL to clone from
-      default: 'https://github.com/isalkovic/ACE_Tekton_Operators.git'
+      default: 'https://github.com/nivin-pradeepkumar/ACE_Tekton_Operators'
       type: string
     - name: git-revision
       description: Revision to checkout. (branch, tag, sha, ref, etc...)
@@ -28,7 +28,7 @@ spec:
       description: The name of the integration server which will be deployed - will be used in Openshift deployment artefacts
       default: acedemnotekton
       type: string
-    - name: deployment-namespace
+    - name: ace-tekton
       description: The name of the Openshift namespace/project , where the integration server and configuration will be deployed
       default: ace-demo-tekton
       type: string
@@ -92,11 +92,11 @@ spec:
         - name: integrationServerName
           value: $(params.integration-server-name)
         - name: deploymentNamespace
-          value: $(params.deployment-namespace)
+          value: ace-tekton
         - name: nexusServerBaseURL
           value: $(params.nexus-server-base-url)
         - name: nexusRepositoryName
-          value: $(params.nexus-repository-name)
+          value: http://nexus-route-ace-tekton.itzroks-666001s79j-p6xk1e-4b4a324f027aea19c5cbc0c3275c4656-0000.us-east.containers.appdomain.cloud/
         - name: nexusPath
           value: $(params.nexus-path)
         - name: barName
